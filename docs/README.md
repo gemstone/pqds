@@ -12,7 +12,7 @@ The Gemstone PQDS Library organizes all Gemstone functionality related to pqds.
 This library includes helpful pqds classes like the following:
 
 * [Class](https://gemstone.github.io/pqds/help/html/T_gemstone_pqds_Class.htm):
-  * Represents a pqds class for handling pqds operations.
+  * Represents a PQDS class for handling PQDS operations.
 
 Among others.
 
