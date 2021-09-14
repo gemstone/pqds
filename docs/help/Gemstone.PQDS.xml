@@ -4,19 +4,251 @@
     <name>Gemstone.PQDS</name>
   </assembly>
   <members>
-    <member name="T:Gemstone.PQDS.Class">
+    <member name="T:Gemstone.PQDS.DataPoint">
       <summary>
-            Sample class for new PQDS library.
+            Represents a single Point in the <see cref="T:Gemstone.PQDS.DataSeries" />.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDS.Class.#ctor">
+    <member name="M:Gemstone.PQDS.DataPoint.#ctor">
       <summary>
         <markup>
           <include item="SMCAutoDocConstructor">
-            <parameter>Gemstone.PQDS.Class</parameter>
+            <parameter>Gemstone.PQDS.DataPoint</parameter>
           </include>
         </markup>
       </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.DataPoint.Time">
+      <summary>
+            Timestamp of the point.
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.DataPoint.Value">
+      <summary>
+            Value of the point.
+            </summary>
+    </member>
+    <member name="T:Gemstone.PQDS.DataSeries">
+      <summary>
+            Represents a channel in a PQDS File.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.DataSeries.#ctor(System.String)">
+      <summary>
+            Creates a new <see cref="T:Gemstone.PQDS.DataSeries" />.
+            </summary>
+      <param name="label">Label of the DataSeries</param>
+    </member>
+    <member name="P:Gemstone.PQDS.DataSeries.Label">
+      <summary>
+            Label of the <see cref="T:Gemstone.PQDS.DataSeries" /></summary>
+    </member>
+    <member name="P:Gemstone.PQDS.DataSeries.Length">
+      <summary>
+            length <see cref="T:Gemstone.PQDS.DataSeries" /> in number of points
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDS.DataSeries.Series">
+      <summary>
+            A collection of DataPoints.
+            </summary>
+    </member>
+    <member name="T:Gemstone.PQDS.MetaDataTag">
+      <summary>
+            Abstract Class of MetaData Tags for a <see cref="T:Gemstone.PQDS.PQDSFile" />.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Gemstone.PQDS.MetaDataTag</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Gemstone.PQDS.MetaDataTag.Key">
+      <summary>
+            the Metadata Tag key.
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.MetaDataTag.m_expectedDataType">
+      <summary>
+            Meta data expected data type of row
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.MetaDataTag.m_key">
+      <summary>
+            Meta data key value of row
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.MetaDataTag.m_note">
+      <summary>
+            Meta data note value of row
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.MetaDataTag.m_unit">
+      <summary>
+            Meta data unit value of row
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag.Type">
+      <summary>
+            Returns the PQDS datatype <see cref="T:Gemstone.PQDS.PQDSMetaDataType" /></summary>
+      <returns>The PQDS Datatype </returns>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag.Write">
+      <summary>
+            Converst the Metadata tag into a line of a PQDS file
+            </summary>
+      <returns>The metadataTag as a String</returns>
+    </member>
+    <member name="T:Gemstone.PQDS.MetaDataTag`1">
+      <summary>
+            Class of MetaData Tags for a <see cref="T:Gemstone.PQDS.PQDSFile" />.
+            </summary>
+      <typeparam name="DataType">
+        <markup>
+          <include item="SMCMissingParamTag">
+            <parameter>typeparam</parameter>
+            <parameter>DataType</parameter>
+            <parameter>T:Gemstone.PQDS.MetaDataTag`1</parameter>
+          </include>
+        </markup>
+      </typeparam>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag`1.#ctor(System.String,`0)">
+      <summary>
+            Creates a <see cref="T:Gemstone.PQDS.MetaDataTag" />.
+            </summary>
+      <param name="key"> key of the MetadataTag</param>
+      <param name="value"> Value of the MetadataTag</param>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag`1.#ctor(System.String,`0,Gemstone.PQDS.PQDSMetaDataType,System.String,System.String)">
+      <summary>
+            Creates a custom <see cref="T:Gemstone.PQDS.MetaDataTag" />.
+            </summary>
+      <param name="key"> key of the MetadataTag</param>
+      <param name="value"> Value of the MetadataTag</param>
+      <param name="valueType"> The <see cref="T:Gemstone.PQDS.PQDSMetaDataType" /> of the metadata tag</param>
+      <param name="unit"> The unit of the metadata tag </param>
+      <param name="description"> a describtion of the metadata tag</param>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag`1.Type">
+      <summary>
+            Returns the PQDS datatype <see cref="T:Gemstone.PQDS.PQDSMetaDataType" /></summary>
+      <returns>The PQDS Datatype </returns>
+    </member>
+    <member name="P:Gemstone.PQDS.MetaDataTag`1.Value">
+      <summary>
+            Value of the MetadataTag.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.MetaDataTag`1.Write">
+      <summary>
+            Converst the Metadata tag into a line of a PQDS file
+            </summary>
+      <returns>The metadataTag as a String</returns>
+    </member>
+    <member name="T:Gemstone.PQDS.PQDSFile">
+      <summary>
+            Class that represents a PQDS file.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.#ctor">
+      <summary>
+            Creates a new PQDS file.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.#ctor(System.Collections.Generic.List{Gemstone.PQDS.MetaDataTag},System.Collections.Generic.List{Gemstone.PQDS.DataSeries},System.DateTime)">
+      <summary>
+            Creates a new PQDS file.
+            </summary>
+      <param name="dataSeries"> Measurment data to be included as <see cref="T:Gemstone.PQDS.DataSeries" /></param>
+      <param name="initialTimeStamp"> Timestamp used as the beginning of the PQDS file </param>
+      <param name="metaData"> List of MetaData to be included in the PQDS file as <see cref="T:Gemstone.PQDS.MetaDataTag`1" /></param>
+    </member>
+    <member name="P:Gemstone.PQDS.PQDSFile.Data">
+      <summary>
+            List of data included in PQDS file as <see cref="T:Gemstone.PQDS.DataSeries" />.
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDS.PQDSFile.MetaData">
+      <summary>
+            List of included Metadata tags.
+            </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.ReadFromFile(System.String)">
+      <summary>
+            Reads the content from a PQDS File.
+            </summary>
+      <param name="filename"> file name</param>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.ReadFromFile(System.String,System.IProgress{System.Double})">
+      <summary>
+            Reads the content from a PQDS File.
+            </summary>
+      <param name="filename"> file name</param>
+      <param name="progress">
+        <see cref="T:System.IProgress`1" /> Progress Token </param>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.WriteToFile(System.String)">
+      <summary>
+            Writes the content to a .csv file.
+            </summary>
+      <param name="file"> file name </param>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.WriteToFile(System.String,System.IProgress{System.Double})">
+      <summary>
+            Writes the content to a .csv file.
+            </summary>
+      <param name="file"> file name </param>
+      <param name="progress">
+        <see cref="T:System.IProgress`1" /> Progress Token</param>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.WriteToStream(System.IO.StreamWriter)">
+      <summary>
+            Writes the content to an output Stream.
+            </summary>
+      <param name="stream"> The <see cref="T:System.IO.StreamWriter" /> to write the data to. </param>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.WriteToStream(System.IO.StreamWriter,System.IProgress{System.Double})">
+      <summary>
+            Writes the content to a .csv file.
+            </summary>
+      <param name="stream"> The <see cref="T:System.IO.StreamWriter" /> to write the data to. </param>
+      <param name="progress">
+        <see cref="T:System.IProgress`1" /> Progress Token</param>
+    </member>
+    <member name="T:Gemstone.PQDS.PQDSMetaDataType">
+      <summary>
+            PQDS metadata tag Datatypes according to PQDS spec.
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.PQDSMetaDataType.Enumeration">
+      <summary>
+            Enumeration data type
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.PQDSMetaDataType.Numeric">
+      <summary>
+            Numeric data type
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.PQDSMetaDataType.AlphaNumeric">
+      <summary>
+            AlphaNumeric data type
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.PQDSMetaDataType.Text">
+      <summary>
+            Text data type
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDS.PQDSMetaDataType.Binary">
+      <summary>
+            Binary data type
+            </summary>
     </member>
   </members>
 </doc>
