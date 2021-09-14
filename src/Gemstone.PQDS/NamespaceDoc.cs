@@ -28,7 +28,7 @@ namespace Gemstone.PQDS
     /// <summary>
     /// The <see cref="Gemstone.PQDS"/> namespace organizes all Gemstone library functionality
     /// related to pqds. The root pqds namespace also includes common pqds classes,
-    /// e.g., <see cref="Class"/>.
+    /// e.g., <see cref="DataSeries"/>.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc
