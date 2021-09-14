@@ -2,10 +2,10 @@
 <HelpTOC>
 
   <HelpTOCNode Title="About" Url="html/About.htm" />
-  <HelpTOCNode Id="27552fcf-5e20-4c4a-ade2-7dd776e6998f" Title="Gemstone.GemTem" Url="html/N_Gemstone_GemTem.htm">
-    <HelpTOCNode Id="7f9edcb0-5363-40f8-a154-c781e156aaf1" Title="Class Class" Url="html/T_Gemstone_GemTem_Class.htm">
-      <HelpTOCNode Title="Class Constructor " Url="html/M_Gemstone_GemTem_Class__ctor.htm" />
-      <HelpTOCNode Title="Class Methods" Url="html/Methods_T_Gemstone_GemTem_Class.htm" />
+  <HelpTOCNode Id="27552fcf-5e20-4c4a-ade2-7dd776e6998f" Title="Gemstone.PQDS" Url="html/N_Gemstone_PQDS.htm">
+    <HelpTOCNode Id="7f9edcb0-5363-40f8-a154-c781e156aaf1" Title="Class Class" Url="html/T_Gemstone_PQDS_Class.htm">
+      <HelpTOCNode Title="Class Constructor " Url="html/M_Gemstone_PQDS_Class__ctor.htm" />
+      <HelpTOCNode Title="Class Methods" Url="html/Methods_T_Gemstone_PQDS_Class.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
 </HelpTOC>
