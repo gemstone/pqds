@@ -73,6 +73,11 @@ namespace Gemstone.PQDS
         /// </summary>
         protected string? m_unit;
         /// <summary>
+        /// Meta data raw value of row
+        /// </summary>
+        protected string? m_rawValue;
+
+        /// <summary>
         /// Meta data expected data type of row
         /// </summary>
         protected PQDSMetaDataType m_expectedDataType;
@@ -89,6 +94,16 @@ namespace Gemstone.PQDS
         /// the Metadata Tag key.
         /// </summary>
         public string? Key { get { return (m_key); } }
+
+        /// <summary>
+        /// the Metadata Tag unit.
+        /// </summary>
+        public string? Unit { get { return (m_unit); } }
+
+        /// <summary>
+        /// the Metadata Tag raw value without typing.
+        /// </summary>
+        public string? RawValue { get { return (m_rawValue); } }
 
         /// <summary>
         /// Converst the Metadata tag into a line of a PQDS file
@@ -130,35 +145,36 @@ namespace Gemstone.PQDS
         /// <param name="value"> Value of the MetadataTag</param>
         public MetaDataTag(String key, DataType value)
         {
-            this.m_value = value;
+            m_value = value;
+            m_rawValue = value?.ToString() ?? "";
 
-            this.m_key = key;
-            if (!keyToDataTypeLookup.TryGetValue(key, out this.m_expectedDataType))
-                this.m_expectedDataType = PQDSMetaDataType.Text;
+            m_key = key;
+            if (!keyToDataTypeLookup.TryGetValue(key, out m_expectedDataType))
+                m_expectedDataType = PQDSMetaDataType.Text;
 
-            if (!keyToUnitLookup.TryGetValue(key, out this.m_unit))
-                this.m_unit = null;
+            if (!keyToUnitLookup.TryGetValue(key, out m_unit))
+                m_unit = null;
 
-            if (!keyToNoteLookup.TryGetValue(key, out this.m_note))
-                this.m_note = null;
+            if (!keyToNoteLookup.TryGetValue(key, out m_note))
+                m_note = null;
 
             //Check to ensure a string does not end up being a number etc...
-            if (this.m_expectedDataType == PQDSMetaDataType.AlphaNumeric)
+            if (m_expectedDataType == PQDSMetaDataType.AlphaNumeric)
             {
                 if (!((value is string) | (value is Guid)))
                 { throw new InvalidCastException("Can not cast object to Alphanumeric Type"); }
             }
-            else if (this.m_expectedDataType == PQDSMetaDataType.Numeric)
+            else if (m_expectedDataType == PQDSMetaDataType.Numeric)
             {
                 if (!((value is int) | (value is double)))
                 { throw new InvalidCastException("Can not cast object to Numeric Type"); }
             }
-            else if (this.m_expectedDataType == PQDSMetaDataType.Enumeration)
+            else if (m_expectedDataType == PQDSMetaDataType.Enumeration)
             {
                 if (!((value is int)))
                 { throw new InvalidCastException("Can not cast object to Numeric Type"); }
             }
-            else if (this.m_expectedDataType == PQDSMetaDataType.Binary)
+            else if (m_expectedDataType == PQDSMetaDataType.Binary)
             {
                 if (!((value is int) | (value is Boolean)))
                 { throw new InvalidCastException("Can not cast object to Numeric Type"); }
@@ -176,16 +192,16 @@ namespace Gemstone.PQDS
         /// <param name="description"> a describtion of the metadata tag</param>
         public MetaDataTag(String key, DataType value, PQDSMetaDataType valueType, String unit, String description)
         {
-            this.m_value = value;
+            m_value = value;
 
-            this.m_key = key;
-            this.m_expectedDataType = valueType;
+            m_key = key;
+            m_expectedDataType = valueType;
 
-            if (unit.Trim('"') == "") { this.m_unit = null; }
-            else { this.m_unit = unit.Trim('"'); }
+            if (unit.Trim('"') == "") { m_unit = null; }
+            else { m_unit = unit.Trim('"'); }
 
-            if (description.Trim('"') == "") { this.m_note = null; }
-            else { this.m_note = description.Trim('"'); }
+            if (description.Trim('"') == "") { m_note = null; }
+            else { m_note = description.Trim('"'); }
 
         }
 
@@ -200,7 +216,7 @@ namespace Gemstone.PQDS
         public override string Write()
         {
             string result = String.Format("{0},\"{1}\",{2},{3},\"{4}\"",
-                this.m_key, this.m_value, this.m_unit, DataTypeToCSV(this.m_expectedDataType), this.m_note);
+                m_key, m_value, m_unit, DataTypeToCSV(m_expectedDataType), m_note);
 
             return result;
         }
@@ -211,7 +227,7 @@ namespace Gemstone.PQDS
         /// <returns>The PQDS Datatype </returns>
         public override PQDSMetaDataType Type()
         {
-            return this.m_expectedDataType;
+            return m_expectedDataType;
         }
 
         #endregion[Methods]
