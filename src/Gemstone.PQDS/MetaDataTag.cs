@@ -193,7 +193,7 @@ namespace Gemstone.PQDS
         public MetaDataTag(String key, DataType value, PQDSMetaDataType valueType, String unit, String description)
         {
             m_value = value;
-
+            m_rawValue = value?.ToString() ?? "";
             m_key = key;
             m_expectedDataType = valueType;
 
