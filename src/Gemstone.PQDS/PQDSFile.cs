@@ -446,8 +446,8 @@ namespace Gemstone.PQDS
                 DateTime TS;
                 try
                 {
-                    double ticks = Convert.ToDouble(flds[0].Trim());
-                    TS = this.m_initialTS + new TimeSpan((Int64)(ticks * 100));
+                    double milliseconds = Convert.ToDouble(flds[0].Trim());
+                    TS = this.m_initialTS.AddMilliseconds(milliseconds);
                 }
                 catch
                 {
@@ -536,6 +536,20 @@ namespace Gemstone.PQDS
         }
 
         #endregion[Methods]
+
+        #region [ Static ]
+        /// <summary>
+        /// Reads PQDS file from file path and returns <see cref="PQDSFile"/> object.
+        /// </summary>
+        /// <param name="filePath">The path to the file.</param>
+        /// <returns>New <see cref="PQDSFile"/> using file contents</returns>
+        public static PQDSFile Read(string filePath)
+        {
+            PQDSFile file = new PQDSFile();
+            file.ReadFromFile(filePath);
+            return file;
+        }
+        #endregion
 
     }
 
