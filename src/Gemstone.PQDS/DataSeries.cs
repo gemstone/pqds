@@ -87,6 +87,11 @@ namespace Gemstone.PQDS
         public DateTime Time;
 
         /// <summary>
+        /// Milliseconds from Inception.
+        /// </summary>
+        public double Milliseconds;
+
+        /// <summary>
         /// Value of the point.
         /// </summary>
         public double Value;
