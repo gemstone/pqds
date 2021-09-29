@@ -18,6 +18,11 @@
         </markup>
       </summary>
     </member>
+    <member name="F:Gemstone.PQDS.DataPoint.Milliseconds">
+      <summary>
+            Milliseconds from Inception.
+            </summary>
+    </member>
     <member name="F:Gemstone.PQDS.DataPoint.Time">
       <summary>
             Timestamp of the point.
@@ -87,15 +92,30 @@
             Meta data note value of row
             </summary>
     </member>
+    <member name="F:Gemstone.PQDS.MetaDataTag.m_rawValue">
+      <summary>
+            Meta data raw value of row
+            </summary>
+    </member>
     <member name="F:Gemstone.PQDS.MetaDataTag.m_unit">
       <summary>
             Meta data unit value of row
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDS.MetaDataTag.RawValue">
+      <summary>
+            the Metadata Tag raw value without typing.
             </summary>
     </member>
     <member name="M:Gemstone.PQDS.MetaDataTag.Type">
       <summary>
             Returns the PQDS datatype <see cref="T:Gemstone.PQDS.PQDSMetaDataType" /></summary>
       <returns>The PQDS Datatype </returns>
+    </member>
+    <member name="P:Gemstone.PQDS.MetaDataTag.Unit">
+      <summary>
+            the Metadata Tag unit.
+            </summary>
     </member>
     <member name="M:Gemstone.PQDS.MetaDataTag.Write">
       <summary>
@@ -177,6 +197,13 @@
       <summary>
             List of included Metadata tags.
             </summary>
+    </member>
+    <member name="M:Gemstone.PQDS.PQDSFile.Read(System.String)">
+      <summary>
+            Reads PQDS file from file path and returns <see cref="T:Gemstone.PQDS.PQDSFile" /> object.
+            </summary>
+      <param name="filePath">The path to the file.</param>
+      <returns>New <see cref="T:Gemstone.PQDS.PQDSFile" /> using file contents</returns>
     </member>
     <member name="M:Gemstone.PQDS.PQDSFile.ReadFromFile(System.String)">
       <summary>

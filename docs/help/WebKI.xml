@@ -10,6 +10,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDS_DataPoint.htm" />
   </HelpKINode>
   <HelpKINode Title="DataPoint.DataPoint constructor" Url="html/M_Gemstone_PQDS_DataPoint__ctor.htm" />
+  <HelpKINode Title="DataPoint.Milliseconds field" Url="html/F_Gemstone_PQDS_DataPoint_Milliseconds.htm" />
   <HelpKINode Title="DataPoint.Time field" Url="html/F_Gemstone_PQDS_DataPoint_Time.htm" />
   <HelpKINode Title="DataPoint.Value field" Url="html/F_Gemstone_PQDS_DataPoint_Value.htm" />
   <HelpKINode Title="DataSeries class">
@@ -58,8 +59,11 @@
   <HelpKINode Title="MetaDataTag.m_expectedDataType field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_expectedDataType.htm" />
   <HelpKINode Title="MetaDataTag.m_key field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_key.htm" />
   <HelpKINode Title="MetaDataTag.m_note field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_note.htm" />
+  <HelpKINode Title="MetaDataTag.m_rawValue field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_rawValue.htm" />
   <HelpKINode Title="MetaDataTag.m_unit field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_unit.htm" />
+  <HelpKINode Title="MetaDataTag.RawValue property" Url="html/P_Gemstone_PQDS_MetaDataTag_RawValue.htm" />
   <HelpKINode Title="MetaDataTag.Type method" Url="html/M_Gemstone_PQDS_MetaDataTag_Type.htm" />
+  <HelpKINode Title="MetaDataTag.Unit property" Url="html/P_Gemstone_PQDS_MetaDataTag_Unit.htm" />
   <HelpKINode Title="MetaDataTag.Write method" Url="html/M_Gemstone_PQDS_MetaDataTag_Write.htm" />
   <HelpKINode Title="MetaDataTag&lt;DataType&gt; class">
     <HelpKINode Title="MetaDataTag(DataType) Class" Url="html/T_Gemstone_PQDS_MetaDataTag_1.htm" />
@@ -72,9 +76,11 @@
   <HelpKINode Title="MetaDataTag&lt;DataType&gt;.Type method" Url="html/M_Gemstone_PQDS_MetaDataTag_1_Type.htm" />
   <HelpKINode Title="MetaDataTag&lt;DataType&gt;.Value property" Url="html/P_Gemstone_PQDS_MetaDataTag_1_Value.htm" />
   <HelpKINode Title="MetaDataTag&lt;DataType&gt;.Write method" Url="html/M_Gemstone_PQDS_MetaDataTag_1_Write.htm" />
+  <HelpKINode Title="Milliseconds field" Url="html/F_Gemstone_PQDS_DataPoint_Milliseconds.htm" />
   <HelpKINode Title="m_expectedDataType field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_expectedDataType.htm" />
   <HelpKINode Title="m_key field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_key.htm" />
   <HelpKINode Title="m_note field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_note.htm" />
+  <HelpKINode Title="m_rawValue field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_rawValue.htm" />
   <HelpKINode Title="m_unit field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_unit.htm" />
   <HelpKINode Title="Numeric enumeration member" Url="html/T_Gemstone_PQDS_PQDSMetaDataType.htm" />
   <HelpKINode Title="PQDSFile class">
@@ -86,10 +92,13 @@
   <HelpKINode Title="PQDSFile.Data property" Url="html/P_Gemstone_PQDS_PQDSFile_Data.htm" />
   <HelpKINode Title="PQDSFile.MetaData property" Url="html/P_Gemstone_PQDS_PQDSFile_MetaData.htm" />
   <HelpKINode Title="PQDSFile.PQDSFile constructor" Url="html/Overload_Gemstone_PQDS_PQDSFile__ctor.htm" />
+  <HelpKINode Title="PQDSFile.Read method" Url="html/M_Gemstone_PQDS_PQDSFile_Read.htm" />
   <HelpKINode Title="PQDSFile.ReadFromFile method" Url="html/Overload_Gemstone_PQDS_PQDSFile_ReadFromFile.htm" />
   <HelpKINode Title="PQDSFile.WriteToFile method" Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToFile.htm" />
   <HelpKINode Title="PQDSFile.WriteToStream method" Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToStream.htm" />
   <HelpKINode Title="PQDSMetaDataType enumeration" Url="html/T_Gemstone_PQDS_PQDSMetaDataType.htm" />
+  <HelpKINode Title="RawValue property" Url="html/P_Gemstone_PQDS_MetaDataTag_RawValue.htm" />
+  <HelpKINode Title="Read method" Url="html/M_Gemstone_PQDS_PQDSFile_Read.htm" />
   <HelpKINode Title="ReadFromFile method" Url="html/Overload_Gemstone_PQDS_PQDSFile_ReadFromFile.htm" />
   <HelpKINode Title="Series property" Url="html/P_Gemstone_PQDS_DataSeries_Series.htm" />
   <HelpKINode Title="Text enumeration member" Url="html/T_Gemstone_PQDS_PQDSMetaDataType.htm" />
@@ -98,6 +107,7 @@
     <HelpKINode Title="MetaDataTag(DataType).Type Method " Url="html/M_Gemstone_PQDS_MetaDataTag_1_Type.htm" />
     <HelpKINode Title="MetaDataTag.Type Method " Url="html/M_Gemstone_PQDS_MetaDataTag_Type.htm" />
   </HelpKINode>
+  <HelpKINode Title="Unit property" Url="html/P_Gemstone_PQDS_MetaDataTag_Unit.htm" />
   <HelpKINode Title="Value field" Url="html/F_Gemstone_PQDS_DataPoint_Value.htm" />
   <HelpKINode Title="Value property" Url="html/P_Gemstone_PQDS_MetaDataTag_1_Value.htm" />
   <HelpKINode Title="welcome">
