@@ -2,37 +2,37 @@
 <HelpTOC>
 
   <HelpTOCNode Title="About" Url="html/About.htm" />
-  <HelpTOCNode Id="2c2665fe-81c5-4813-8c75-9373897fbc64" Title="Gemstone.PQDS" Url="html/N_Gemstone_PQDS.htm">
-    <HelpTOCNode Id="f4910f93-e8e4-4ca2-ad4e-feaa9b345d4c" Title="DataPoint Class" Url="html/T_Gemstone_PQDS_DataPoint.htm">
+  <HelpTOCNode Id="75b57cd0-e672-44b6-a91d-966b5f4aacaa" Title="Gemstone.PQDS" Url="html/N_Gemstone_PQDS.htm">
+    <HelpTOCNode Id="d26ecd32-155b-4a3a-a767-42a9ed441aae" Title="DataPoint Class" Url="html/T_Gemstone_PQDS_DataPoint.htm">
       <HelpTOCNode Title="DataPoint Constructor " Url="html/M_Gemstone_PQDS_DataPoint__ctor.htm" />
       <HelpTOCNode Title="DataPoint Methods" Url="html/Methods_T_Gemstone_PQDS_DataPoint.htm" />
-      <HelpTOCNode Id="92813097-9449-4398-87ca-e85bce9102d5" Title="DataPoint Fields" Url="html/Fields_T_Gemstone_PQDS_DataPoint.htm">
+      <HelpTOCNode Id="d1563a8b-861d-4602-a4d5-98e0c9310289" Title="DataPoint Fields" Url="html/Fields_T_Gemstone_PQDS_DataPoint.htm">
         <HelpTOCNode Title="Milliseconds Field" Url="html/F_Gemstone_PQDS_DataPoint_Milliseconds.htm" />
         <HelpTOCNode Title="Time Field" Url="html/F_Gemstone_PQDS_DataPoint_Time.htm" />
         <HelpTOCNode Title="Value Field" Url="html/F_Gemstone_PQDS_DataPoint_Value.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3184d07e-cd17-470d-8d1e-3f5d8e43cd93" Title="DataSeries Class" Url="html/T_Gemstone_PQDS_DataSeries.htm">
+    <HelpTOCNode Id="1e5970d4-350d-4e3b-9127-e26dc2080257" Title="DataSeries Class" Url="html/T_Gemstone_PQDS_DataSeries.htm">
       <HelpTOCNode Title="DataSeries Constructor " Url="html/M_Gemstone_PQDS_DataSeries__ctor.htm" />
-      <HelpTOCNode Id="69cedd8c-87be-4ea2-9016-4ae02f77fd9d" Title="DataSeries Properties" Url="html/Properties_T_Gemstone_PQDS_DataSeries.htm">
+      <HelpTOCNode Id="02f072db-912b-404c-a928-3781bf1e5f5f" Title="DataSeries Properties" Url="html/Properties_T_Gemstone_PQDS_DataSeries.htm">
         <HelpTOCNode Title="Label Property " Url="html/P_Gemstone_PQDS_DataSeries_Label.htm" />
         <HelpTOCNode Title="Length Property " Url="html/P_Gemstone_PQDS_DataSeries_Length.htm" />
         <HelpTOCNode Title="Series Property " Url="html/P_Gemstone_PQDS_DataSeries_Series.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="DataSeries Methods" Url="html/Methods_T_Gemstone_PQDS_DataSeries.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="13069fae-01a0-4273-8eaa-c187de96ce14" Title="MetaDataTag Class" Url="html/T_Gemstone_PQDS_MetaDataTag.htm">
+    <HelpTOCNode Id="51ee866c-d786-42d7-934b-a423a847090d" Title="MetaDataTag Class" Url="html/T_Gemstone_PQDS_MetaDataTag.htm">
       <HelpTOCNode Title="MetaDataTag Constructor " Url="html/M_Gemstone_PQDS_MetaDataTag__ctor.htm" />
-      <HelpTOCNode Id="fd338bb0-0c64-47ca-b39c-67940b8f1b4e" Title="MetaDataTag Properties" Url="html/Properties_T_Gemstone_PQDS_MetaDataTag.htm">
+      <HelpTOCNode Id="c6b5dffa-1bd1-42c8-a653-19571e69090a" Title="MetaDataTag Properties" Url="html/Properties_T_Gemstone_PQDS_MetaDataTag.htm">
         <HelpTOCNode Title="Key Property " Url="html/P_Gemstone_PQDS_MetaDataTag_Key.htm" />
         <HelpTOCNode Title="RawValue Property " Url="html/P_Gemstone_PQDS_MetaDataTag_RawValue.htm" />
         <HelpTOCNode Title="Unit Property " Url="html/P_Gemstone_PQDS_MetaDataTag_Unit.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2d1eae07-0f75-467b-be02-4f8ab7dcb86c" Title="MetaDataTag Methods" Url="html/Methods_T_Gemstone_PQDS_MetaDataTag.htm">
+      <HelpTOCNode Id="aaaf4667-a13f-4d5d-9f58-d74985961e28" Title="MetaDataTag Methods" Url="html/Methods_T_Gemstone_PQDS_MetaDataTag.htm">
         <HelpTOCNode Title="Type Method " Url="html/M_Gemstone_PQDS_MetaDataTag_Type.htm" />
         <HelpTOCNode Title="Write Method " Url="html/M_Gemstone_PQDS_MetaDataTag_Write.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9a48f4d3-415a-455f-b205-8ca00f21c052" Title="MetaDataTag Fields" Url="html/Fields_T_Gemstone_PQDS_MetaDataTag.htm">
+      <HelpTOCNode Id="5aa95713-15a1-4ded-bf3f-93fc559b5c9f" Title="MetaDataTag Fields" Url="html/Fields_T_Gemstone_PQDS_MetaDataTag.htm">
         <HelpTOCNode Title="m_expectedDataType Field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_expectedDataType.htm" />
         <HelpTOCNode Title="m_key Field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_key.htm" />
         <HelpTOCNode Title="m_note Field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_note.htm" />
@@ -40,40 +40,40 @@
         <HelpTOCNode Title="m_unit Field" Url="html/F_Gemstone_PQDS_MetaDataTag_m_unit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ea9a39a3-1fda-4bb0-bd16-f9d6d784a8f2" Title="MetaDataTag(DataType) Class" Url="html/T_Gemstone_PQDS_MetaDataTag_1.htm">
-      <HelpTOCNode Id="53f499a1-0f27-48fa-a239-c4d06ec987b7" Title="MetaDataTag(DataType) Constructor " Url="html/Overload_Gemstone_PQDS_MetaDataTag_1__ctor.htm">
+    <HelpTOCNode Id="133599f3-9aee-4525-b36e-c2464ca5e781" Title="MetaDataTag(DataType) Class" Url="html/T_Gemstone_PQDS_MetaDataTag_1.htm">
+      <HelpTOCNode Id="eff5918b-4c56-4512-aa7e-2a302f731e32" Title="MetaDataTag(DataType) Constructor " Url="html/Overload_Gemstone_PQDS_MetaDataTag_1__ctor.htm">
         <HelpTOCNode Title="MetaDataTag(DataType) Constructor (String, DataType)" Url="html/M_Gemstone_PQDS_MetaDataTag_1__ctor.htm" />
         <HelpTOCNode Title="MetaDataTag(DataType) Constructor (String, DataType, PQDSMetaDataType, String, String)" Url="html/M_Gemstone_PQDS_MetaDataTag_1__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="54b4bb51-94ce-4df5-add1-b169095422cd" Title="MetaDataTag(DataType) Properties" Url="html/Properties_T_Gemstone_PQDS_MetaDataTag_1.htm">
+      <HelpTOCNode Id="ecb08d78-b8c6-42fe-8d8d-3da2370d8d40" Title="MetaDataTag(DataType) Properties" Url="html/Properties_T_Gemstone_PQDS_MetaDataTag_1.htm">
         <HelpTOCNode Title="Value Property " Url="html/P_Gemstone_PQDS_MetaDataTag_1_Value.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="04bc4355-785b-474b-a1ee-c42f65ec3f24" Title="MetaDataTag(DataType) Methods" Url="html/Methods_T_Gemstone_PQDS_MetaDataTag_1.htm">
+      <HelpTOCNode Id="7135e296-3058-408b-a015-dfb9c6d8c471" Title="MetaDataTag(DataType) Methods" Url="html/Methods_T_Gemstone_PQDS_MetaDataTag_1.htm">
         <HelpTOCNode Title="Type Method " Url="html/M_Gemstone_PQDS_MetaDataTag_1_Type.htm" />
         <HelpTOCNode Title="Write Method " Url="html/M_Gemstone_PQDS_MetaDataTag_1_Write.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="MetaDataTag(DataType) Fields" Url="html/Fields_T_Gemstone_PQDS_MetaDataTag_1.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="eaaa4010-4bef-41f5-91ec-b3b5224804e2" Title="PQDSFile Class" Url="html/T_Gemstone_PQDS_PQDSFile.htm">
-      <HelpTOCNode Id="515882ef-ba73-4dcb-908d-8630c4cfbf3c" Title="PQDSFile Constructor " Url="html/Overload_Gemstone_PQDS_PQDSFile__ctor.htm">
+    <HelpTOCNode Id="eccf5380-e30b-4196-a23c-fa02db03065f" Title="PQDSFile Class" Url="html/T_Gemstone_PQDS_PQDSFile.htm">
+      <HelpTOCNode Id="b6034183-f2e6-4e5d-84f9-f36a2ae2e714" Title="PQDSFile Constructor " Url="html/Overload_Gemstone_PQDS_PQDSFile__ctor.htm">
         <HelpTOCNode Title="PQDSFile Constructor " Url="html/M_Gemstone_PQDS_PQDSFile__ctor.htm" />
         <HelpTOCNode Title="PQDSFile Constructor (List(MetaDataTag), List(DataSeries), DateTime)" Url="html/M_Gemstone_PQDS_PQDSFile__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="160964b5-2f66-4bc6-8311-ca2a4ad07666" Title="PQDSFile Properties" Url="html/Properties_T_Gemstone_PQDS_PQDSFile.htm">
+      <HelpTOCNode Id="7158175e-3958-4df2-90b1-48fea6ae6950" Title="PQDSFile Properties" Url="html/Properties_T_Gemstone_PQDS_PQDSFile.htm">
         <HelpTOCNode Title="Data Property " Url="html/P_Gemstone_PQDS_PQDSFile_Data.htm" />
         <HelpTOCNode Title="MetaData Property " Url="html/P_Gemstone_PQDS_PQDSFile_MetaData.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f5b154f8-4b1b-417a-8867-a2b1a91555e6" Title="PQDSFile Methods" Url="html/Methods_T_Gemstone_PQDS_PQDSFile.htm">
+      <HelpTOCNode Id="4a080c7a-330f-4bcd-9d4f-a35cdfac7a9f" Title="PQDSFile Methods" Url="html/Methods_T_Gemstone_PQDS_PQDSFile.htm">
         <HelpTOCNode Title="Read Method " Url="html/M_Gemstone_PQDS_PQDSFile_Read.htm" />
-        <HelpTOCNode Id="1c07116b-b96c-495e-b86b-b65f5c288b51" Title="ReadFromFile Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_ReadFromFile.htm">
+        <HelpTOCNode Id="77fe72da-9bd8-4214-8658-c0ca8a314696" Title="ReadFromFile Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_ReadFromFile.htm">
           <HelpTOCNode Title="ReadFromFile Method (String)" Url="html/M_Gemstone_PQDS_PQDSFile_ReadFromFile.htm" />
           <HelpTOCNode Title="ReadFromFile Method (String, IProgress(Double))" Url="html/M_Gemstone_PQDS_PQDSFile_ReadFromFile_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="05fc01d1-bc53-4d8e-bb03-e1406e397653" Title="WriteToFile Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToFile.htm">
+        <HelpTOCNode Id="4321fad6-6cae-4dd6-b1a6-a761fec7a472" Title="WriteToFile Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToFile.htm">
           <HelpTOCNode Title="WriteToFile Method (String)" Url="html/M_Gemstone_PQDS_PQDSFile_WriteToFile.htm" />
           <HelpTOCNode Title="WriteToFile Method (String, IProgress(Double))" Url="html/M_Gemstone_PQDS_PQDSFile_WriteToFile_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="de102840-d950-456f-a733-c183a64384e2" Title="WriteToStream Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToStream.htm">
+        <HelpTOCNode Id="d1e6ae31-5474-4daa-8d1b-57f5e819ef9e" Title="WriteToStream Method " Url="html/Overload_Gemstone_PQDS_PQDSFile_WriteToStream.htm">
           <HelpTOCNode Title="WriteToStream Method (StreamWriter)" Url="html/M_Gemstone_PQDS_PQDSFile_WriteToStream.htm" />
           <HelpTOCNode Title="WriteToStream Method (StreamWriter, IProgress(Double))" Url="html/M_Gemstone_PQDS_PQDSFile_WriteToStream_1.htm" />
         </HelpTOCNode>
