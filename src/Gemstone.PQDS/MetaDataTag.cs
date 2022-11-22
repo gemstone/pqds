@@ -234,7 +234,7 @@ namespace Gemstone.PQDS
 
         #region[Statics]
 
-        private static readonly Dictionary<string, PQDSMetaDataType> keyToDataTypeLookup = new Dictionary<string, PQDSMetaDataType>()
+        private static readonly Dictionary<string, PQDSMetaDataType> keyToDataTypeLookup = new()
         {
             {"DeviceName", PQDSMetaDataType.Text },
             {"DeviceAlias", PQDSMetaDataType.Text },
@@ -289,7 +289,7 @@ namespace Gemstone.PQDS
             {"ContactEmail",  PQDSMetaDataType.Text }
         };
 
-        private static readonly Dictionary<string, string?> keyToUnitLookup = new Dictionary<string, string?>()
+        private static readonly Dictionary<string, string?> keyToUnitLookup = new()
         {
             {"DeviceName", null },
             {"DeviceAlias", null },
@@ -344,7 +344,7 @@ namespace Gemstone.PQDS
             {"ContactEmail", null }
         };
 
-        private static readonly Dictionary<string, string> keyToNoteLookup = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> keyToNoteLookup = new()
         {
             {"DeviceName", "Meter or measurement device name" },
             {"DeviceAlias", "Alternate meter or measurement device name" },

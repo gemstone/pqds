@@ -294,7 +294,7 @@ namespace Gemstone.PQDS
             int n_total = n_data + n_data + this.m_metaData.Count() + 1;
 
             //create the metadata header
-            List<string> lines = new List<string>();
+            List<string> lines = new();
             lines = this.m_metaData.Select(item => item.Write()).ToList();
 
             lines.AddRange(DataLines(n_total, progress));
@@ -316,7 +316,7 @@ namespace Gemstone.PQDS
         public void WriteToFile(string file, IProgress<double> progress)
         {
             // Open the file and write in each line
-            using (StreamWriter fileWriter = new StreamWriter(File.OpenWrite(file)))
+            using (StreamWriter fileWriter = new(File.OpenWrite(file)))
             {
                 WriteToStream(fileWriter, progress);
             }
@@ -328,7 +328,7 @@ namespace Gemstone.PQDS
         /// <param name="file"> file name </param>
         public void WriteToFile(string file)
         {
-            Progress<double> prog = new Progress<double>();
+            Progress<double> prog = new();
             WriteToFile(file, prog);
         }
 
@@ -338,7 +338,7 @@ namespace Gemstone.PQDS
         /// <param name="stream"> The <see cref="StreamWriter"/> to write the data to. </param>
         public void WriteToStream(StreamWriter stream)
         {
-            Progress<double> prog = new Progress<double>();
+            Progress<double> prog = new();
             WriteToStream(stream, prog);
         }
 
@@ -350,7 +350,7 @@ namespace Gemstone.PQDS
         /// <param name="filename"> file name</param>
         public void ReadFromFile(string filename)
         {
-            Progress<double> prog = new Progress<double>();
+            Progress<double> prog = new();
             ReadFromFile(filename, prog);
         }
 
@@ -362,9 +362,9 @@ namespace Gemstone.PQDS
         /// <param name="progress"> <see cref="IProgress{T}"/> Progress Token </param>
         public void ReadFromFile(string filename, IProgress<double> progress)
         {
-            List<string> lines = new List<string>();
+            List<string> lines = new();
             // Open the file and read each line
-            using (StreamReader fileReader = new StreamReader(File.OpenRead(filename)))
+            using (StreamReader fileReader = new(File.OpenRead(filename)))
             {
                 while (!fileReader.EndOfStream)
                 {
@@ -409,8 +409,8 @@ namespace Gemstone.PQDS
             }
 
             this.m_Data = new List<DataSeries>();
-            List<string> signals = new List<string>();
-            List<List<DataPoint>> data = new List<List<DataPoint>>();
+            List<string> signals = new();
+            List<List<DataPoint>> data = new();
 
 
             for (int i = 1; i < flds.Count(); i++)
@@ -483,7 +483,7 @@ namespace Gemstone.PQDS
 
         private List<String> DataLines(int n_total, IProgress<double> progress)
         {
-            List<string> result = new List<string>();
+            List<string> result = new();
 
             //ensure they all start at the same Time
             List<string> measurements = this.m_Data.Select(item => item.Label).ToList();
@@ -506,7 +506,7 @@ namespace Gemstone.PQDS
 
             int n_data = samplingRates.Max();
 
-            Dictionary<int,  Func< int, DataSeries, double>> reSampling = new Dictionary<int, Func< int, DataSeries, double>>();
+            Dictionary<int,  Func< int, DataSeries, double>> reSampling = new();
 
             if (samplingRates.Any(f => ((double)n_data / (double)f) % 1 != 0))
                 throw new Exception("Sampling Rates in this File do not match and are not multiples of each other.");
@@ -547,7 +547,7 @@ namespace Gemstone.PQDS
         /// <returns>New <see cref="PQDSFile"/> using file contents</returns>
         public static PQDSFile Read(string filePath)
         {
-            PQDSFile file = new PQDSFile();
+            PQDSFile file = new();
             file.ReadFromFile(filePath);
             return file;
         }
