@@ -27,8 +27,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gemstone.PQDS
 {
@@ -54,11 +52,11 @@ namespace Gemstone.PQDS
         /// <param name="metaData"> List of MetaData to be included in the PQDS file as <see cref="MetaDataTag{DataType}"/> </param>
         public PQDSFile(List<MetaDataTag> metaData, List<DataSeries> dataSeries, DateTime initialTimeStamp)
         {
-            if (metaData is null) { this.m_metaData = new List<MetaDataTag>(); }
-            else { this.m_metaData = metaData; }
+            if (metaData is null) { m_metaData = new List<MetaDataTag>(); }
+            else { m_metaData = metaData; }
 
-            this.m_initialTS = initialTimeStamp;
-            this.m_Data = dataSeries;
+            m_initialTS = initialTimeStamp;
+            m_Data = dataSeries;
         }
 
         /// <summary>
@@ -66,8 +64,8 @@ namespace Gemstone.PQDS
         /// </summary>
         public PQDSFile()
         {
-            this.m_metaData = new List<MetaDataTag>();
-            this.m_Data = new List<DataSeries>();
+            m_metaData = new List<MetaDataTag>();
+            m_Data = new List<DataSeries>();
         }
 
         #endregion[Constructors]
@@ -81,9 +79,9 @@ namespace Gemstone.PQDS
             int? month = null;
             int? year = null;
 
-            if (this.m_metaData.Select(item => item.Key).Contains("eventdate"))
+            if (m_metaData.Select(item => item.Key).Contains("eventdate"))
             {
-                string val = ((MetaDataTag<String>)this.m_metaData.Find(item => item.Key == "eventdate")).Value;
+                string val = ((MetaDataTag<String>)m_metaData.Find(item => item.Key == "eventdate")).Value;
                 if (DateTime.TryParseExact(val, "MM/dd/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
                 {
                     day = result.Day;
@@ -93,9 +91,9 @@ namespace Gemstone.PQDS
             }
             if (day is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventday"))
+                if (m_metaData.Select(item => item.Key).Contains("eventday"))
                 {
-                    day = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventday")).Value;
+                    day = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventday")).Value;
                 }
                 else
                 {
@@ -104,9 +102,9 @@ namespace Gemstone.PQDS
             }
             if (month is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventmonth"))
+                if (m_metaData.Select(item => item.Key).Contains("eventmonth"))
                 {
-                    month = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventmonth")).Value;
+                    month = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventmonth")).Value;
                 }
                 else
                 {
@@ -115,9 +113,9 @@ namespace Gemstone.PQDS
             }
             if (year is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventyear"))
+                if (m_metaData.Select(item => item.Key).Contains("eventyear"))
                 {
-                    year = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventyear")).Value;
+                    year = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventyear")).Value;
                 }
                 else
                 {
@@ -129,9 +127,9 @@ namespace Gemstone.PQDS
             int? minute = null;
             int? second = null;
 
-            if (this.m_metaData.Select(item => item.Key).Contains("eventtime"))
+            if (m_metaData.Select(item => item.Key).Contains("eventtime"))
             {
-                string val = ((MetaDataTag<String>)this.m_metaData.Find(item => item.Key == "eventtime")).Value;
+                string val = ((MetaDataTag<String>)m_metaData.Find(item => item.Key == "eventtime")).Value;
                 if (DateTime.TryParseExact(val, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
                 {
                     hour = result.Hour;
@@ -141,9 +139,9 @@ namespace Gemstone.PQDS
             }
             if (hour is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventhour"))
+                if (m_metaData.Select(item => item.Key).Contains("eventhour"))
                 {
-                    hour = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventhour")).Value;
+                    hour = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventhour")).Value;
                 }
                 else
                 {
@@ -152,9 +150,9 @@ namespace Gemstone.PQDS
             }
             if (minute is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventminute"))
+                if (m_metaData.Select(item => item.Key).Contains("eventminute"))
                 {
-                    minute = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventminute")).Value;
+                    minute = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventminute")).Value;
                 }
                 else
                 {
@@ -163,9 +161,9 @@ namespace Gemstone.PQDS
             }
             if (second is null)
             {
-                if (this.m_metaData.Select(item => item.Key).Contains("eventsecond"))
+                if (m_metaData.Select(item => item.Key).Contains("eventsecond"))
                 {
-                    second = ((MetaDataTag<int>)this.m_metaData.Find(item => item.Key == "eventsecond")).Value;
+                    second = ((MetaDataTag<int>)m_metaData.Find(item => item.Key == "eventsecond")).Value;
                 }
                 else
                 {
@@ -176,7 +174,7 @@ namespace Gemstone.PQDS
 
             result = new DateTime((int)year, (int)month, (int)day, (int)hour, (int)minute, (int)second);
 
-            this.m_initialTS = result;
+            m_initialTS = result;
         }
 
         private MetaDataTag CreateMetaData(string[] flds)
@@ -272,7 +270,7 @@ namespace Gemstone.PQDS
         /// </summary>
         public List<MetaDataTag> MetaData
         {
-            get { return this.m_metaData; }
+            get { return m_metaData; }
         }
 
         /// <summary>
@@ -280,7 +278,7 @@ namespace Gemstone.PQDS
         /// </summary>
         public List<DataSeries> Data
         {
-            get { return this.m_Data; }
+            get { return m_Data; }
         }
 
         /// <summary>
@@ -290,12 +288,12 @@ namespace Gemstone.PQDS
         /// <param name="progress"> <see cref="IProgress{T}"/> Progress Token</param>
         public void WriteToStream(StreamWriter stream, IProgress<double> progress)
         {
-            int n_data = this.Data.Select((item) => item.Length).Max();
-            int n_total = n_data + n_data + this.m_metaData.Count() + 1;
+            int n_data = Data.Select(item => item.Length).Max();
+            int n_total = n_data + n_data + m_metaData.Count() + 1;
 
             //create the metadata header
             List<string> lines = new();
-            lines = this.m_metaData.Select(item => item.Write()).ToList();
+            lines = m_metaData.Select(item => item.Write()).ToList();
 
             lines.AddRange(DataLines(n_total, progress));
 
@@ -375,7 +373,7 @@ namespace Gemstone.PQDS
             int index = 0;
             String[] flds;
             // Parse MetaData Section
-            this.m_metaData = new List<MetaDataTag>();
+            m_metaData = new List<MetaDataTag>();
 
             while (!(IsDataHeader(lines[index])))
             {
@@ -392,12 +390,12 @@ namespace Gemstone.PQDS
                     index++;
                     continue;
                 }
-                this.m_metaData.Add(CreateMetaData(flds));
+                m_metaData.Add(CreateMetaData(flds));
                 index++;
 
                 if (index == lines.Count())
                 { throw new InvalidDataException("PQDS File not valid"); }
-                progress.Report((double)index / (double)lines.Count());
+                progress.Report(index / (double)lines.Count());
             }
 
             //Parse Data  Header
@@ -408,7 +406,7 @@ namespace Gemstone.PQDS
                 throw new InvalidDataException("PQDS File has invalid data section or no data");
             }
 
-            this.m_Data = new List<DataSeries>();
+            m_Data = new List<DataSeries>();
             List<string> signals = new();
             List<List<DataPoint>> data = new();
 
@@ -419,7 +417,7 @@ namespace Gemstone.PQDS
                 {
                     continue;
                 }
-                this.m_Data.Add(new DataSeries(flds[i].Trim().ToLower()));
+                m_Data.Add(new DataSeries(flds[i].Trim().ToLower()));
                 signals.Add(flds[i].Trim().ToLower());
                 data.Add(new List<DataPoint>());
             }
@@ -438,7 +436,7 @@ namespace Gemstone.PQDS
 
                 flds = lines[index].Split(',');
 
-                if (flds.Count() != (this.m_Data.Count() + 1))
+                if (flds.Count() != (m_Data.Count() + 1))
                 {
                     index++;
                     continue;
@@ -449,7 +447,7 @@ namespace Gemstone.PQDS
                 {
                     milliseconds = Convert.ToDouble(flds[0].Trim());
                     double ticks = milliseconds * 10000;
-                    TS = this.m_initialTS.AddTicks((int)ticks);
+                    TS = m_initialTS.AddTicks((int)ticks);
                 }
                 catch
                 {
@@ -462,22 +460,21 @@ namespace Gemstone.PQDS
                     try
                     {
                         double value = Convert.ToDouble(flds[i + 1].Trim());
-                        data[i].Add(new DataPoint() { Time = TS, Value = value, Milliseconds = milliseconds });
+                        data[i].Add(new DataPoint { Time = TS, Value = value, Milliseconds = milliseconds });
                     }
                     catch
                     {
-                        continue;
                     }
                 }
 
-                progress.Report((double)index / (double)lines.Count());
+                progress.Report(index / (double)lines.Count());
                 index++;
             }
 
             for (int i = 0; i < signals.Count(); i++)
             {
-                int j = this.m_Data.FindIndex(item => item.Label == signals[i]);
-                this.m_Data[j].Series = data[j];
+                int j = m_Data.FindIndex(item => item.Label == signals[i]);
+                m_Data[j].Series = data[j];
             }
         }
 
@@ -486,9 +483,9 @@ namespace Gemstone.PQDS
             List<string> result = new();
 
             //ensure they all start at the same Time
-            List<string> measurements = this.m_Data.Select(item => item.Label).ToList();
-            DateTime initalStart = this.m_Data.Select(item => item.Series[0].Time).Min();
-            List<TimeSpan> startTime = this.m_Data.Select(item => item.Series[0].Time - initalStart).ToList();
+            List<string> measurements = m_Data.Select(item => item.Label).ToList();
+            DateTime initalStart = m_Data.Select(item => item.Series[0].Time).Min();
+            List<TimeSpan> startTime = m_Data.Select(item => item.Series[0].Time - initalStart).ToList();
 
             //1 ms difference is ok
             if (startTime.Max().TotalMilliseconds > 1)
@@ -508,15 +505,14 @@ namespace Gemstone.PQDS
 
             Dictionary<int,  Func< int, DataSeries, double>> reSampling = new();
 
-            if (samplingRates.Any(f => ((double)n_data / (double)f) % 1 != 0))
+            if (samplingRates.Any(f => (n_data / (double)f) % 1 != 0))
                 throw new Exception("Sampling Rates in this File do not match and are not multiples of each other.");
 
-            reSampling = samplingRates.Select(item => new KeyValuePair<int, Func<int, DataSeries, double>>(item, (int index, DataSeries ds) => {
+            reSampling = samplingRates.Select(item => new KeyValuePair<int, Func<int, DataSeries, double>>(item, (index, ds) => {
                 int n = n_data / item;
                 if (index % n == 0)
                     return ds.Series[index / n].Value;
-                else
-                    return double.NaN;
+                return double.NaN;
             }))
                 .ToDictionary(item => item.Key, item => item.Value);
             
@@ -530,7 +526,7 @@ namespace Gemstone.PQDS
                             return "NaN".PadLeft(12);
                         return String.Format("{0:F12}", v);
                         }).ToList()));
-                progress.Report((double)i / (double)n_total);
+                progress.Report(i / (double)n_total);
             }
 
             return result;
