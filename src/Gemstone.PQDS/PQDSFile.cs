@@ -21,6 +21,7 @@
 //
 //******************************************************************************************************
 
+#pragma warning disable CS8600, CS8602
 
 using System;
 using System.Collections.Generic;
@@ -81,7 +82,7 @@ namespace Gemstone.PQDS
 
             if (m_metaData.Select(item => item.Key).Contains("eventdate"))
             {
-                string val = ((MetaDataTag<String>)m_metaData.Find(item => item.Key == "eventdate")).Value;
+                string val = ((MetaDataTag<string>)m_metaData.Find(item => item.Key == "eventdate")).Value;
                 if (DateTime.TryParseExact(val, "MM/dd/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
                 {
                     day = result.Day;
@@ -129,7 +130,7 @@ namespace Gemstone.PQDS
 
             if (m_metaData.Select(item => item.Key).Contains("eventtime"))
             {
-                string val = ((MetaDataTag<String>)m_metaData.Find(item => item.Key == "eventtime")).Value;
+                string val = ((MetaDataTag<string>)m_metaData.Find(item => item.Key == "eventtime")).Value;
                 if (DateTime.TryParseExact(val, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
                 {
                     hour = result.Hour;
@@ -221,12 +222,12 @@ namespace Gemstone.PQDS
                 case (PQDSMetaDataType.AlphaNumeric):
                     {
                         string value = flds[1].Trim('"');
-                        return new MetaDataTag<String>(key, value, dataType, unit, note);
+                        return new MetaDataTag<string>(key, value, dataType, unit, note);
                     }
                 case (PQDSMetaDataType.Text):
                     {
                         string value = flds[1].Trim('"');
-                        return new MetaDataTag<String>(key, value, dataType, unit, note);
+                        return new MetaDataTag<string>(key, value, dataType, unit, note);
                     }
                 case (PQDSMetaDataType.Enumeration):
                     {
@@ -240,24 +241,24 @@ namespace Gemstone.PQDS
                     }
                 case (PQDSMetaDataType.Binary):
                     {
-                        Boolean value = Convert.ToBoolean(flds[1].Trim('"'));
-                        return new MetaDataTag<Boolean>(key, value, dataType, unit, note);
+                        bool value = Convert.ToBoolean(flds[1].Trim('"'));
+                        return new MetaDataTag<bool>(key, value, dataType, unit, note);
                     }
                 default:
                     {
                         string value = flds[1].Trim('"');
-                        return new MetaDataTag<String>(key, value, dataType, unit, note);
+                        return new MetaDataTag<string>(key, value, dataType, unit, note);
                     }
             }
 
 
         }
 
-        private Boolean IsDataHeader(string line)
+        private bool IsDataHeader(string line)
         {
             if (!line.Contains(","))
                 return false;
-            String[] flds = line.Split(',');
+            string[] flds = line.Split(',');
 
             if (flds[0].ToLower().Trim() == "waveform-data")
                 return true;
@@ -366,12 +367,12 @@ namespace Gemstone.PQDS
             {
                 while (!fileReader.EndOfStream)
                 {
-                    lines.Add(fileReader.ReadLine().Trim());
+                    lines.Add(fileReader.ReadLine()!.Trim());
                 }
             }
 
             int index = 0;
-            String[] flds;
+            string[] flds;
             // Parse MetaData Section
             m_metaData = new List<MetaDataTag>();
 
@@ -478,7 +479,7 @@ namespace Gemstone.PQDS
             }
         }
 
-        private List<String> DataLines(int n_total, IProgress<double> progress)
+        private List<string> DataLines(int n_total, IProgress<double> progress)
         {
             List<string> result = new();
 
@@ -494,7 +495,7 @@ namespace Gemstone.PQDS
             }
 
             //write the header
-            result.Add("waveform-data," + String.Join(",", measurements));
+            result.Add("waveform-data," + string.Join(",", measurements));
 
 
             //write the Data
@@ -520,11 +521,11 @@ namespace Gemstone.PQDS
             {
                 TimeSpan dT = m_Data[0].Series[i].Time - m_initialTS;
                 result.Add(Convert.ToString(dT.TotalMilliseconds) + "," +
-                    String.Join(",", m_Data.Select(item => {
+                    string.Join(",", m_Data.Select(item => {
                         double v = reSampling[item.Length](i, item);
                         if (double.IsNaN(v))
                             return "NaN".PadLeft(12);
-                        return String.Format("{0:F12}", v);
+                        return string.Format("{0:F12}", v);
                         }).ToList()));
                 progress.Report(i / (double)n_total);
             }

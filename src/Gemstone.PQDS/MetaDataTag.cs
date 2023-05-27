@@ -106,7 +106,7 @@ namespace Gemstone.PQDS
         /// Converst the Metadata tag into a line of a PQDS file
         /// </summary>
         /// <returns>The metadataTag as a String</returns>
-        public abstract String Write();
+        public abstract string Write();
 
         /// <summary>
         /// Returns the PQDS datatype <see cref="PQDSMetaDataType"/>
@@ -140,7 +140,7 @@ namespace Gemstone.PQDS
         /// </summary>
         /// <param name="key"> key of the MetadataTag</param>
         /// <param name="value"> Value of the MetadataTag</param>
-        public MetaDataTag(String key, DataType value)
+        public MetaDataTag(string key, DataType value)
         {
             m_value = value;
             m_rawValue = value?.ToString() ?? "";
@@ -173,7 +173,7 @@ namespace Gemstone.PQDS
             }
             else if (m_expectedDataType == PQDSMetaDataType.Binary)
             {
-                if (!((value is int) | (value is Boolean)))
+                if (!((value is int) | (value is bool)))
                 { throw new InvalidCastException("Can not cast object to Numeric Type"); }
             }
 
@@ -187,7 +187,7 @@ namespace Gemstone.PQDS
         /// <param name="valueType"> The <see cref="PQDSMetaDataType"/> of the metadata tag</param>
         /// <param name="unit"> The unit of the metadata tag </param>
         /// <param name="description"> a describtion of the metadata tag</param>
-        public MetaDataTag(String key, DataType value, PQDSMetaDataType valueType, String unit, String description)
+        public MetaDataTag(string key, DataType value, PQDSMetaDataType valueType, string unit, string description)
         {
             m_value = value;
             m_rawValue = value?.ToString() ?? "";
@@ -212,7 +212,7 @@ namespace Gemstone.PQDS
         /// <returns>The metadataTag as a String</returns>
         public override string Write()
         {
-            string result = String.Format("{0},\"{1}\",{2},{3},\"{4}\"",
+            string result = string.Format("{0},\"{1}\",{2},{3},\"{4}\"",
                 m_key, m_value, m_unit, DataTypeToCSV(m_expectedDataType), m_note);
 
             return result;
