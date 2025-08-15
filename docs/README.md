@@ -8,7 +8,7 @@ The Gemstone PQDS Library organizes all Gemstone functionality related to Power 
 [![GitHub license](https://img.shields.io/github/license/gemstone/pqds?color=4CC61E)](https://github.com/gemstone/pqds/blob/master/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/kyclq74y88y30p4a?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/pqds)
 ![CodeQL](https://github.com/gemstone/pqds/workflows/CodeQL/badge.svg)
-[![NuGet](https://buildstats.info/nuget/Gemstone.PQDS)](https://www.nuget.org/packages/Gemstone.PQDS#readme-body-tab)
+[![NuGet](https://img.shields.io/nuget/vpre/Gemstone.PQDS)](https://www.nuget.org/packages/Gemstone.PQDS#readme-body-tab)
 
 This library includes helpful PQDS classes like the following:
 
